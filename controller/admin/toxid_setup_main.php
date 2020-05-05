@@ -7,7 +7,7 @@ class toxid_setup_main extends oxAdminView
 
     public function render()
     {
-        $oConf = oxRegistry::getConfig();
+        $oConf = \OxidEsales\Eshop\Core\Registry::getConfig();
 
         $this->_aViewData['aToxidCurlSource']              = $oConf->getShopConfVar('aToxidCurlSource');
         $this->_aViewData['aToxidCurlSourceSsl']           = $oConf->getShopConfVar('aToxidCurlSourceSsl');
@@ -37,7 +37,7 @@ class toxid_setup_main extends oxAdminView
      */
     public function save()
     {
-        $oConf   = oxRegistry::getConfig();
+        $oConf   = \OxidEsales\Eshop\Core\Registry::getConfig();
         $aParams = $oConf->getRequestParameter("editval");
         $sShopId = $oConf->getShopId();
 

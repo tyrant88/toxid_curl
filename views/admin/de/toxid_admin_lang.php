@@ -36,7 +36,7 @@ $aLang = [
     'TOXID_DONT_VERIFY_SSL_CERTIFICATE'            => 'SSL-Zertifikat nicht überprüfen',
 ];
 
-if (oxRegistry::getConfig()->getConfigParam('iUtfMode') === 0) {
+if (\OxidEsales\Eshop\Core\Registry::getConfig()->getConfigParam('iUtfMode') === 0) {
     foreach ($aLang as $k => $v) {
         $aLang[$k] = utf8_decode($v);
     }

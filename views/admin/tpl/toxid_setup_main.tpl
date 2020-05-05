@@ -212,7 +212,7 @@ function _groupExp(el) {
                             <tr>
                                 <td valign="top" class="edittext">
                                     <input type="hidden" name="editval[toxidDontVerifySSLCert]" value="0">
-                                    <input type="checkbox" name="editval[toxidDontVerifySSLCert]" value="1" [{if $bToxidRedirect301ToStartpage}]checked="checked"[{/if}]>
+                                    <input type="checkbox" name="editval[toxidDontVerifySSLCert]" value="1" [{if $toxidDontVerifySSLCert}]checked="checked"[{/if}]>
                                     [{oxmultilang ident="TOXID_DONT_VERIFY_SSL_CERTIFICATE"}]
                                 </td>
                             </tr>

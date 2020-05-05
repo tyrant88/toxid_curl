@@ -29,7 +29,7 @@ class toxid_curl_content_widget extends oxWidget
     public function render()
     {
         /** @var toxidCurl $toxid */
-        $toxid = oxRegistry::get('toxidCurl');
+        $toxid = \OxidEsales\Eshop\Core\Registry::get('toxidCurl');
 
         if (!$toxid->getInitialized()) {
             $toxid->init(oxNew('Toxid_Curl_Smarty_Parser'));
