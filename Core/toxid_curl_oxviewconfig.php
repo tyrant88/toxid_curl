@@ -1,4 +1,5 @@
 <?php
+namespace toxid_curl\Core;
 /**
  *    This file is part of TOXID Module for OXID eShop CE/PE/EE.
  *
@@ -45,7 +46,7 @@ class toxid_curl_oxviewconfig extends toxid_curl_oxviewconfig_parent
     {
         $toxidCurl = \OxidEsales\Eshop\Core\Registry::get('toxidcurl');
         if (!$toxidCurl->getInitialized()) {
-            $smartyParser = oxNew('toxid_curl_smarty_parser');
+            $smartyParser = oxNew('Toxid_Curl_Smarty_Parser');
             $toxidCurl->init(
                 $smartyParser
             );

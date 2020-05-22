@@ -1,6 +1,6 @@
 <?php
-
-class toxid_setup_main extends oxAdminView
+namespace toxid_curl\Controller\Admin;
+class toxid_setup_main extends \OxidEsales\Eshop\Application\Controller\Admin\AdminController
 {
     const CONFIG_MODULE_NAME = 'module:toxid_curl';
     protected $_sThisTemplate = 'toxid_setup_main.tpl';

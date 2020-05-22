@@ -1,5 +1,5 @@
 <?php
-
+namespace toxid_curl\Widgets;
 /**
  *    This file is part of TOXID Module for OXID eShop CE/PE/EE.
  *
@@ -12,7 +12,7 @@
  * @package   core
  * @copyright (C) marmalade.de 2011
  */
-class toxid_curl_content_widget extends oxWidget
+class toxid_curl_content_widget extends \OxidEsales\Eshop\Application\Component\Widget\WidgetController
 {
     /**
      * Current class template name.

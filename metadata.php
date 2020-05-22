@@ -16,7 +16,7 @@
 /**
  * Metadata version
  */
-$sMetadataVersion = '1.1';
+$sMetadataVersion = '2.1';
 
 $aModule = array(
     'id'          => 'toxid_curl',
@@ -28,44 +28,48 @@ $aModule = array(
     'email'         => 'support@marmalade.de',
     'url'           => 'http://www.marmalade.de',
     'thumbnail'     => 'toxid.jpg',
-    'version'       => '2.3.3',
+    'version'       => '3.0.0',
     'author'        => 'marmalade GmbH :: Joscha Krug',
-    'extend' => array(
-        'oxseodecoder'              => 'toxid_curl/core/toxid_curl_oxseodecoder',
-        'oxviewconfig'              => 'toxid_curl/core/toxid_curl_oxviewconfig',
-        'oxutilsview'               => 'toxid_curl/core/toxid_curl_oxutilsview'
-    ),
-    'templates' => array(
+    'extend' => [
+        \OxidEsales\Eshop\Core\SeoDecoder::class             => \toxid_curl\core\toxid_curl_oxseodecoder::class,
+        \OxidEsales\Eshop\Core\UtilsView::class             => \toxid_curl\core\toxid_curl_oxutilsview::class,
+        \OxidEsales\Eshop\Core\ViewConfig::class             => \toxid_curl\core\toxid_curl_oxviewconfig::class
+    ],
+    'controllers' => [
+        'toxid_curl'        => \toxid_curl\Controller\toxid_curl::class,
+        'toxid_setup'       => \toxid_curl\Controller\Admin\toxid_setup::class,
+        'toxid_setup_list'  => \toxid_curl\Controller\Admin\toxid_setup_list::class,
+        'toxid_setup_main'  => \toxid_curl\Controller\Admin\toxid_setup_main::class,
+    ],
+    'templates' => [
         'toxid_curl.tpl'            => 'toxid_curl/views/azure/toxid_curl.tpl',
         'product.tpl'               => 'toxid_curl/views/azure/product.tpl',
         'toxid_setup_main.tpl'      => 'toxid_curl/views/admin/tpl/toxid_setup_main.tpl',
         'toxid_content_widget.tpl'  => 'toxid_curl/views/widgets/toxid_content_widget.tpl',
-    ),
-    'blocks' => array(
-        array(
+    ],
+    'blocks' => [
+        [
             'template' => '_formparams.tpl',
             'block'=>'admin_formparams',
             'file'=>'/views/admin/blocks/_formparams_admin_formparams.tpl'
-        ),
-    ),
-    'files' => array(
-        'toxid_curl'                => 'toxid_curl/controller/toxid_curl.php',
+        ],
+    ],
+    'files' => [
         'toxidcurl'                 => 'toxid_curl/core/toxidcurl.php',
-        'toxid_setup'               => 'toxid_curl/controller/admin/toxid_setup.php',
-        'toxid_setup_main'          => 'toxid_curl/controller/admin/toxid_setup_main.php',
-        'toxid_setup_list'          => 'toxid_curl/controller/admin/toxid_setup_list.php',
-        'toxid_curl_events'         => 'toxid_curl/core/toxid_curl_events.php',
         'toxid_curl_smarty_parser'  => 'toxid_curl/core/facades/toxid_curl_smarty_parser.php',
         'toxid_curl_content_widget' => 'toxid_curl/widgets/toxid_curl_content_widget.php',
-    ),
-    'settings' => array(
-        array(
+    ],
+    'settings' => [
+        [
             'group' => 'toxid_config_not_here',
             'name'  => 'noConfigHere',
-        ),
-    ),
-    'events' => array(
-        'onActivate'    => 'toxid_curl_events::onActivate',
-        'onDeactivate'  => 'toxid_curl_events::onDeactivate'
-    )
+        ],
+    ],
+    'events' => [
+        'onActivate'    => '\toxid_curl\core\toxid_curl_events::onActivate',
+        'onDeactivate'  => '\toxid_curl\core\toxid_curl_events::onDeactivate'
+    ],
+    'smartyPluginDirectories' => [
+        'Core/Smarty/Plugin'
+    ],
 );

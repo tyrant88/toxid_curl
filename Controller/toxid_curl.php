@@ -1,4 +1,5 @@
 <?php
+namespace toxid_curl\Controller;
 /**
  *    This file is part of TOXID Module for OXID eShop CE/PE/EE.
  *
@@ -15,7 +16,7 @@
 /**
  * TOXID - loads CMS-pages and displays them
  */
-class toxid_curl extends oxUBase
+class toxid_curl extends OxidEsales\Eshop\Application\Controller\FrontendController
 {
     private $_initialized = false;
 

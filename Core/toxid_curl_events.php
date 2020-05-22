@@ -1,4 +1,5 @@
 <?php
+namespace toxid_curl\Core;
 /**
  * vt Smarty Extension Demo
  * Copyright (C) 2013  Marat Bedoev

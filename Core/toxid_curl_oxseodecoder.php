@@ -1,5 +1,5 @@
 <?php
-
+namespace toxid_curl\Core;
 /**
  *    This file is part of TOXID Module for OXID eShop CE/PE/EE.
  *
