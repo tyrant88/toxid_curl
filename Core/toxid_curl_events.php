@@ -15,11 +15,11 @@ namespace toxid_curl\Core;
  * @package   core
  */
 
-class toxid_curl_events extends oxI18n {
+class toxid_curl_events {
 
 	public static function onActivate() {
 
-		$cfg = oxRegistry::getConfig();
+		$cfg = \OxidEsales\Eshop\Core\Registry::getConfig();
 
 		//clearing cache
 		$dir = $cfg->getConfigParam("sCompileDir")."*";
@@ -30,7 +30,9 @@ class toxid_curl_events extends oxI18n {
 		}
 
 		// reloading smarty object after activation
-		oxRegistry::get("oxUtilsView")->getSmarty(true);
+        \OxidEsales\Eshop\Core\Registry::get("OxidEsales\Eshop\Core\UtilsView")->getSmarty(true);
+
+
 	}
 
 	public static function onDeactivate() {
@@ -38,11 +40,11 @@ class toxid_curl_events extends oxI18n {
 		// but blocks are still in tempaltes -> exception
 		// needs some optimization / workaround here, cause custom plugins dir is still in smarty object
 
-		//oxRegistry::get("oxUtilsView")->getSmarty(true);
+		//\OxidEsales\Eshop\Core\Registry::get("OxidEsales\Eshop\Core\UtilsView")->getSmarty(true);
 
 
 		//clearing cache to force re-init smarty object (i hope)
-		$cfg = oxRegistry::getConfig();
+		$cfg = \OxidEsales\Eshop\Core\Registry::getConfig();
 		$dir = $cfg->getConfigParam("sCompileDir")."*";
 		foreach (glob($dir) as $item) {
 			if (!is_dir($item)) {

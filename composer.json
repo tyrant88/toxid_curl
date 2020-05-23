@@ -1,16 +1,22 @@
 {
-  "name": "jkrug/toxid_curl",
+  "name": "toxid_curl",
   "description": "",
-  "type": "oxid-module",
-  "license": "GPL-3.0",
-  "require": {
-    "composer/installers": "~1.0"
+  "type": "oxideshop-module",
+  "license": [
+    "GPL-3.0-only",
+    "proprietary"
+  ],
+  "extra":       {
+    "oxideshop": {
+      "target-directory": "toxid_curl"
+    }
   },
-  "require-dev": {
-    "phpunit/phpunit": "@stable",
-    "phpmd/oxmd": "@stable"
+  "require":     {
+    "php": ">=7.1"
   },
-  "autoload": {
-    "classmap": ["controller/", "core/"]
+  "autoload":    {
+    "psr-4": {
+      "toxid_curl\\": "../../../source/modules/toxid_curl"
+    }
   }
 }

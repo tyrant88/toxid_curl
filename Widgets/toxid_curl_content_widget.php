@@ -29,10 +29,10 @@ class toxid_curl_content_widget extends \OxidEsales\Eshop\Application\Component\
     public function render()
     {
         /** @var toxidCurl $toxid */
-        $toxid = \OxidEsales\Eshop\Core\Registry::get('toxidCurl');
+        $toxid = \OxidEsales\Eshop\Core\Registry::get(\toxid_curl\Core\toxidcurl::class);
 
         if (!$toxid->getInitialized()) {
-            $toxid->init(oxNew('Toxid_Curl_Smarty_Parser'));
+            $toxid->init(oxNew(Toxid_Curl_Smarty_Parser::class));
         }
 
         $cmsSnippet = $toxid->getCmsSnippet('content', true, 'toxid-content-widget');

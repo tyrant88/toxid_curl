@@ -40,13 +40,13 @@ class toxid_curl_oxviewconfig extends toxid_curl_oxviewconfig_parent
 
     /**
      * returns instance of toxidCurl
-     * @return toxidCurl
+     * @return toxidcurl
      */
     public function getToxid()
     {
-        $toxidCurl = \OxidEsales\Eshop\Core\Registry::get('toxidcurl');
+        $toxidCurl = \OxidEsales\Eshop\Core\Registry::get(\toxid_curl\Core\toxidcurl::class);
         if (!$toxidCurl->getInitialized()) {
-            $smartyParser = oxNew('Toxid_Curl_Smarty_Parser');
+            $smartyParser = oxNew(\toxid_curl\Core\facades\Toxid_Curl_Smarty_Parser::class);
             $toxidCurl->init(
                 $smartyParser
             );

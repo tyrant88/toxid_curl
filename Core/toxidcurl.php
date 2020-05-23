@@ -1,4 +1,5 @@
 <?php
+namespace toxid_curl\Core;
 /**
  *    This file is part of TOXID Module for OXID eShop CE/PE/EE.
  *
@@ -16,7 +17,7 @@
  * toxid Class
  *
  */
-class toxidCurl
+class toxidcurl
 {
     /**
      * array of content snippets
@@ -126,7 +127,7 @@ class toxidCurl
      */
     private $additionalUrlParams = array();
 
-    public function init(Toxid_Curl_Smarty_Parser $smartyParser)
+    public function init(\toxid_curl\Core\facades\Toxid_Curl_Smarty_Parser $smartyParser)
     {
         $this->smartyParser = $smartyParser;
         $this->_initialized = true;

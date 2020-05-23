@@ -16,7 +16,7 @@ namespace toxid_curl\Controller;
 /**
  * TOXID - loads CMS-pages and displays them
  */
-class toxid_curl extends OxidEsales\Eshop\Application\Controller\FrontendController
+class toxid_curl extends \OxidEsales\Eshop\Application\Controller\FrontendController
 {
     private $_initialized = false;
 
