@@ -54,11 +54,6 @@ $aModule = array(
             'file'=>'/views/admin/blocks/_formparams_admin_formparams.tpl'
         ],
     ],
-    'files' => [
-        'toxidcurl'                 => 'toxid_curl/core/toxidcurl.php',
-        'toxid_curl_smarty_parser'  => 'toxid_curl/core/facades/toxid_curl_smarty_parser.php',
-        'toxid_curl_content_widget' => 'toxid_curl/widgets/toxid_curl_content_widget.php',
-    ],
     'settings' => [
         [
             'group' => 'toxid_config_not_here',
