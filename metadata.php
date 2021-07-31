@@ -39,13 +39,13 @@ $aModule = array(
         'toxid_curl'        => \toxid_curl\Controller\toxid_curl::class,
         'toxid_setup'       => \toxid_curl\Controller\Admin\toxid_setup::class,
         'toxid_setup_list'  => \toxid_curl\Controller\Admin\toxid_setup_list::class,
-        'toxid_setup_main'  => \toxid_curl\Controller\Admin\toxid_setup_main::class,
+        'toxid_setup_main'  => \toxid_curl\Controller\Admin\toxid_setup_main::class
     ],
     'templates' => [
         'toxid_curl.tpl'            => 'toxid_curl/views/azure/toxid_curl.tpl',
         'product.tpl'               => 'toxid_curl/views/azure/product.tpl',
         'toxid_setup_main.tpl'      => 'toxid_curl/views/admin/tpl/toxid_setup_main.tpl',
-        'toxid_content_widget.tpl'  => 'toxid_curl/views/widgets/toxid_content_widget.tpl',
+        'toxid_content_widget.tpl'  => 'toxid_curl/views/widgets/toxid_content_widget.tpl'
     ],
     'blocks' => [
         [
